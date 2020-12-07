@@ -1,0 +1,5 @@
+name: Tips
+description: Tips..
+type: module
+core_verison_requirement: ^9
+package: Custom
