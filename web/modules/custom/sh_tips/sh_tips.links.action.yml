@@ -1,0 +1,5 @@
+entity.tip.add_form:
+  route_name: entity.tip.add_form
+  title: 'Add Tip'
+  appears_on:
+    - entity.tip.collection

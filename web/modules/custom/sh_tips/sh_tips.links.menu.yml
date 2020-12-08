@@ -1,0 +1,6 @@
+entity.tip.collection:
+  title: 'Tip list'
+  route_name: entity.tip.collection
+  description: 'List Tip entities'
+  parent: system.admin_structure
+  weight: 100

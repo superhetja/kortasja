@@ -11,14 +11,14 @@ $config['system.performance']['css']['preprocess'] = FALSE;
 $config['system.performance']['js']['preprocess'] = FALSE;
 
 // Loads misc drupal services - See services.yml file
-$settings['container_yamls'][] = $app_root . '/sites/default/services.yml';
+//$settings['container_yamls'][] = $app_root . '/sites/default/services.yml';
 
 // Disable the render cache and disable dynamic page cache
 // This causes the site to be slower locally, but helps out
 // in development
-$settings['cache']['bins']['render'] = 'cache.backend.null';
-$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
-$settings['cache']['bins']['page'] = 'cache.backend.null';
+//$settings['cache']['bins']['render'] = 'cache.backend.null';
+//$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
+//$settings['cache']['bins']['page'] = 'cache.backend.null';
 
 // Drupal >= 8.8
 // Changes the default location of the config_sync_directory. Default

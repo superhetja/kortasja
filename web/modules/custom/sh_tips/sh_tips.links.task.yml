@@ -1,0 +1,15 @@
+entity.tip.canonical:
+  route_name: entity.tip.canonical
+  base_route: entity.tip.canonical
+  title: 'View'
+
+entity.tip.edit_form:
+  route_name: entity.tip.edit_form
+  base_route: entity.tip.canonical
+  title: 'Edit'
+
+entity.tip.delete_form:
+  route_name: entity.tip.delete_form
+  base_route: entity.product.canonical
+  title: Delete
+  weight: 10
