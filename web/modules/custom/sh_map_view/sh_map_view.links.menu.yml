@@ -1,6 +1,5 @@
-sh_map_view.admin.config:
-  title: 'Map View Configurations'
-  base_route_name: sh_map_view.admin.config
-  names:
-    - sh_map_view.settings
-
+sh_map_view.settings:
+  route_name: sh_map_view.map_view_form
+  title: 'Map View settings'
+  parent: system.admin_config_system
+  description: 'Configure Map View settings.'

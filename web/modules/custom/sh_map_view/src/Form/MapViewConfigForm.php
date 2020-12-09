@@ -51,8 +51,12 @@ class MapViewConfigForm extends ConfigFormBase {
       '#type' => 'select',
       '#title' => 'Location',
       '#options' => [
-        '51.505, -0.09' => 'Ísland',
-        '51.505, -0.09' => 'Selfoss',
+        '60.505, -0.09' => 'Ísland',
+        '32.505, -0.09' => 'Árborg',
+        '12.505, -0.09' => 'Reykjanes',
+        '6.505, -0.09' => 'Reykjavík',
+        '20.505, -0.09' => 'Hafnafjörður',
+        '51.505, -0.09' => 'Mosfellsbær',
       ],
       '#default_value' => $config->get('location'),
     ];

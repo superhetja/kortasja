@@ -5,5 +5,3 @@ sh_map_view.map_view_form:
     _title: 'Map View configuration'
   requirements:
     _permission: 'administer site configuration'
-
-
