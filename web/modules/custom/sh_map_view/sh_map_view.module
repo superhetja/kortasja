@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ * tip module file
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+
+/**
+ * Implements hook_form_alter()
+ *
+ * Alter the display of a form.
+ */
+function sh_map_view_form_alter(&$form, FormStateInterface $form_state, $form_id ) {
+  //Finds the form type we need to alter.
+
+  if($form_id == 'tip_form') {
+    //get a look at the form array, which amongst other stuff
+    //shows the available fields
+    //kint($form);
+    $markup = '<div id="map-view"></div>';
+    $form['location'] = [
+      "#type" => 'markup',
+      '#markup' => $markup,
+      //find what weight..
+      '#weight' => 1,
+    ];
+
+    $form['#attached']['library'][] = 'sh_map_view/leaflet';
+    $form['#attached']['library'][] = 'sh_map_view/map_view';
+
+  }
+
+}

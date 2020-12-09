@@ -20,15 +20,11 @@ class TipForm extends ContentEntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        $this->messenger()->addMessage($this->t('Created the %label Tip.', [
-          '%label' => $entity->label(),
-        ]));
+        $this->messenger()->addMessage($this->t('Created the a Tip.'));
         break;
 
       default:
-        $this->messenger()->addMessage($this->t('Saved the %label Tip.', [
-          '%label' => $entity->label(),
-        ]));
+        $this->messenger()->addMessage($this->t('Saved the a Tip.'));
     }
     $form_state->setRedirect('entity.tip.canonical', ['tip' => $entity->id()]);
   }
