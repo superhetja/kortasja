@@ -11,4 +11,3 @@ sh_map_view.custom_config:
     Location:
       type: string
       label: 'Coordinates for default map view'
-

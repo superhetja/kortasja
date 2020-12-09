@@ -5,8 +5,6 @@ namespace Drupal\sh_map_view\form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-//maybe implement update field ?!?
-
 /**
  * Configuration form definition for Map Viewer
  */
@@ -37,8 +35,7 @@ class MapViewConfigForm extends ConfigFormBase {
       '#title' => 'Access Token',
       '#description' => 'Leaflet access token can be found at https://account.mapbox.com/access-tokens/',
       //remove default value before completion
-      '#default_value' => 'hello world',
-        //$config->get('map_view_access_token'),
+      '#default_value' => $config->get('map_view_access_token'),
     ];
     $form['map_view_id'] = [
       '#type' => 'select',
@@ -54,8 +51,8 @@ class MapViewConfigForm extends ConfigFormBase {
       '#type' => 'select',
       '#title' => 'Location',
       '#options' => [
-        '[60.505, -30]' => 'Ísland',
-        '[51.505, -0.09]' => 'Selfoss',
+        '51.505, -0.09' => 'Ísland',
+        '51.505, -0.09' => 'Selfoss',
       ],
       '#default_value' => $config->get('location'),
     ];
