@@ -15,7 +15,7 @@ class MapViewConfigForm extends ConfigFormBase {
 
   protected function getEditableConfigNames()
   {
-    return ['sh_map_view.map_view'];
+    return ['sh_map_view.custom_config'];
   }
 
   /**
@@ -30,19 +30,48 @@ class MapViewConfigForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $config = $this->config('sh_map_view.map_view');
+    $config = $this->config('sh_map_view.custom_config');
 
-    $form['map_view_api '] = [
+    $form['map_view_access_token'] = [
       '#type' => 'textfield',
-      '#title' => 'View Map Api',
-      'description' => 'API Key for view map'
+      '#title' => 'Access Token',
+      '#description' => 'Leaflet access token can be found at https://account.mapbox.com/access-tokens/',
+      //remove default value before completion
+      '#default_value' => 'hello world',
+        //$config->get('map_view_access_token'),
+    ];
+    $form['map_view_id'] = [
+      '#type' => 'select',
+      '#title' => 'Map View',
+      '#options' => [
+        'mapbox/streets-v11' => 'Street',
+        'mapbox/satellite-v9' => 'Satellite',
+      ],
+      '#default_value' => $config->get('map_view_id'),
     ];
 
-    $form['location '] = [
-      '#type' => 'textfield',
+    $form['location'] = [
+      '#type' => 'select',
       '#title' => 'Location',
-      'description' => 'Location name for default map settings.'
+      '#options' => [
+        '[60.505, -30]' => 'Ísland',
+        '[51.505, -0.09]' => 'Selfoss',
+      ],
+      '#default_value' => $config->get('location'),
     ];
+
     return parent::buildForm($form, $form_state);
   }
+
+  public function submitForm(array &$form, FormStateInterface $form_state)
+  {
+    $this->config('sh_map_view.custom_config')
+      ->set('map_view_access_token', $form_state->getValue('map_view_access_token'))
+      ->set('map_view_id', $form_state->getValue('map_view_id'))
+      ->set('location', $form_state->getValue('location'))
+      ->save();
+
+    parent::submitForm($form, $form_state);
+  }
+
 }

@@ -5,6 +5,7 @@ map_view:
   dependencies:
     - core/jquery
     - core/drupal
+    - core/drupalSettings
 
 leaflet:
   version: 1.7.1

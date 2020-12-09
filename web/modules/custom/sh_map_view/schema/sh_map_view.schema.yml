@@ -1,0 +1,14 @@
+sh_map_view.custom_config:
+  type: config_object
+  label: 'Map View Config'
+  mapping:
+    map_view_access_token:
+      type: string
+      label: 'Access token'
+    map_view_id:
+      type: string
+      label: 'Map View'
+    Location:
+      type: string
+      label: 'Coordinates for default map view'
+
