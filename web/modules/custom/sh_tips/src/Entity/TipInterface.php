@@ -41,6 +41,19 @@ interface TipInterface extends ContentEntityInterface, EntityChangedInterface {
    */
   public function getLocation();
 
+  /**
+   * Gets the Tip creation timestamp. *
+   * @return int
+   */
+  public function getCreatedTime();
 
+  /**
+   * Sets the Tip creation timestamp.
+   *
+   * @param int $timestamp
+   *
+   * @return \Drupal\sh_tips\Entity\TipInterface * The called Product entity.
+   */
+  public function setCreatedTime($timestamp);
 
 }

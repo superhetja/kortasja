@@ -16,10 +16,10 @@
     ],
     "require": {
         "composer/installers": "^1.9",
-        "drupal/admin_toolbar": "^2.4",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
+        "drupal/geocoder": "^3.14",
         "drupal/geofield": "^1.16",
         "drupal/geofield_map": "^2.67",
         "drupal/leaflet": "^2.1"
