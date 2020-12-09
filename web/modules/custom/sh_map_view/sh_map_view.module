@@ -1,0 +1,20 @@
+<?php
+/**
+ * @file
+ * map_view module filter
+ */
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter
+ *
+ * Alter the display of a form
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function sh_map_view_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  return None;
+}

@@ -1,0 +1,8 @@
+sh_map_view_library:
+  version: 1.x
+  css:
+    theme:
+      css/sh_map_view.css: {}
+  js:
+    js/sh_map_view.js: {}
+
