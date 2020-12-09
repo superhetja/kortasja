@@ -77,6 +77,19 @@ class Tip extends ContentEntityBase implements TipInterface {
     return $this;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getCreatedTime() { return $this->get('created')->value;
+  }
+  /**
+   * {@inheritdoc}
+   */
+  public function setCreatedTime($timestamp)
+  { $this->set('created', $timestamp);
+    return $this;
+  }
+
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -119,6 +132,14 @@ class Tip extends ContentEntityBase implements TipInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
+
+    $fields['created'] = BaseFieldDefinition::create('created')
+      ->setLabel(t('Created'))
+      ->setDescription(t('The time that the entity was created.'));
+
+    $fields['changed'] = BaseFieldDefinition::create('changed')
+      ->setLabel(t('Changed'))
+      ->setDescription(t('The time that the entity was last edited.'));
     return $fields;
   }
 }
