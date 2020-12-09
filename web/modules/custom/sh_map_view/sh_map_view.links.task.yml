@@ -1,4 +1,4 @@
-hello_world.config:
+sh_map_view.config:
   route_name: sh_map_view.map_view_config_form
   title: 'Configuration'
   base_route: sh_map_view.map_view

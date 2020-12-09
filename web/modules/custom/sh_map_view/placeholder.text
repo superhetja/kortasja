@@ -1,0 +1,13 @@
+sh_map_view.settings:
+  route_name: sh_map_view.admin.setting
+  title: 'Map View settings'
+  parent: system.admin_config_system
+  description: 'Configure Map View settings'
+
+sh_map_view.settings:
+  path: '/admin/config/map-view-settings'
+  defaults:
+    _form: Drupal\sh_map_view\Form\MapViewConfigForm
+    _title: 'Map View configuration'
+  requirements:
+    _permission: 'administer site configuration'
