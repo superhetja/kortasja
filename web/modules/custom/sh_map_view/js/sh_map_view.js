@@ -16,20 +16,29 @@
     accessToken: drupalSettings.sh_map_view.map_view.map_view_access_token //Token to display the map
   }).addTo(map);
 
+
+
   var marker = L.circleMarker();
 
   function onMapClick(e) {
     marker
       .setLatLng(e.latlng)
       .addTo(map);
-    doAddressCheck(e.latlng);
-  }
-
-  function doAddressCheck(latlng){
-    var req = new XMLHttpRequest()
+    doRequest(e.latlng);
   }
 
   map.on('click', onMapClick);
 
+  function doRequest(latlng) {
+    function reqListener () {
+      console.log(this.responseText);
+    }
+
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", reqListener);
+    oReq.open("GET", "https://nominatim.openstreetmap.org/reverse?email=holmfridurh17@ru.is&format=xml&lat=" + latlng.lat + "&lon=" + latlng.lng);
+    oReq.send();
+
+  }
 
 }) (Drupal, jQuery);
