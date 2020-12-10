@@ -1,0 +1,4 @@
+services:
+  sh_map_view.NominatimService:
+    class: Drupal\sh_map_view\NominatimService
+    arguments: ['@config.factory', '@event_dispatcher', '@page_cache_kill_switch']
