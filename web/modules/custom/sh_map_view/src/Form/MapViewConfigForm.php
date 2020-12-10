@@ -34,7 +34,6 @@ class MapViewConfigForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => 'Access Token',
       '#description' => 'Leaflet access token can be found at https://account.mapbox.com/access-tokens/',
-      //remove default value before completion
       '#default_value' => $config->get('map_view_access_token'),
     ];
     $form['map_view_id'] = [
@@ -60,7 +59,15 @@ class MapViewConfigForm extends ConfigFormBase {
         '64.166843, -21.695939' => 'Mosfellsbær',
       ],
       '#default_value' => $config->get('location'),
-    ];
+      ];
+
+      $form['map_view_email'] = [
+        '#type' => 'email',
+        '#title' => 'Email Adress',
+        '#description' => 'An email adress is needed for Nominatim service validation.',
+        '#default_value' => $config->get('map_view_email'),
+      ];
+
 
     return parent::buildForm($form, $form_state);
   }
