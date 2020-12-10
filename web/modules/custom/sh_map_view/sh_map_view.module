@@ -37,6 +37,7 @@ function sh_map_view_form_alter(&$form, FormStateInterface $form_state, $form_id
     ];
 
     $form['#attached']['library'][] = 'sh_map_view/leaflet';
+    $form['#attached']['library'][] = 'sh_map_view/geosearch';
     $form['#attached']['library'][] = 'sh_map_view/map_view';
     $form['#attached']['drupalSettings']['sh_map_view'] ['map_view'] = $map_settings;
 

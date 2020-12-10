@@ -21,7 +21,11 @@
     marker
       .setLatLng(e.latlng)
       .addTo(map);
-    console.log(e.latlng);
+    doAddressCheck(e.latlng);
+  }
+
+  function doAddressCheck(latlng){
+    var req = new XMLHttpRequest()
   }
 
   map.on('click', onMapClick);
