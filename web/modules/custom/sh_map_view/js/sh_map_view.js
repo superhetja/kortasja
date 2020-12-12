@@ -30,14 +30,22 @@
   map.on('click', onMapClick);
 
   function doRequest(latlng) {
+
     function reqListener () {
       console.log(this.responseText);
-    }
+      let obj = JSON.parse(this.responseText);
+      console.log(obj.address.road + " " +obj.address.house_number + ", " + obj.address.postcode + " " + obj.address.town);
+      let house_number = obj.address.house_number !== undefined ? obj.address.house_number : "";
+      $('#map_view_address').val(obj.address.road + " " + house_number + ", " + obj.address.postcode + " " + obj.address.town)
 
+    }
     var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", reqListener);
-    oReq.open("GET", "https://nominatim.openstreetmap.org/reverse?email=holmfridurh17@ru.is&format=xml&lat=" + latlng.lat + "&lon=" + latlng.lng);
+    oReq.open("GET", "https://nominatim.openstreetmap.org/reverse?email="+ drupalSettings.sh_map_view.map_view.map_view_email +"&format=jsonv2&lat=" + latlng.lat + "&lon=" + latlng.lng);
     oReq.send();
+    $('#map_view_longitude').val(latlng.lng);
+    $('#map_view_latitude').val(latlng.lat);
+
 
   }
 

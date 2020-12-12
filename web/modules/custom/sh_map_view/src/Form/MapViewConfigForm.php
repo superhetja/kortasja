@@ -78,6 +78,7 @@ class MapViewConfigForm extends ConfigFormBase {
       ->set('map_view_access_token', $form_state->getValue('map_view_access_token'))
       ->set('map_view_id', $form_state->getValue('map_view_id'))
       ->set('location', $form_state->getValue('location'))
+      ->set('map_view_email', $form_state->getValue('map_view_email'))
       ->save();
 
     parent::submitForm($form, $form_state);

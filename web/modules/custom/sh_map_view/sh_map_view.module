@@ -27,17 +27,42 @@ function sh_map_view_form_alter(&$form, FormStateInterface $form_state, $form_id
       //find what weight..
       '#weight' => 1,
     ];
+
+    $form['latitude'] = [
+      '#type' => 'hidden',
+      '#title' => 'Latitude',
+      '#attributes' => array(
+        'id' => 'map_view_latitude',
+      ),
+    ];
+
+    $form['longitude'] = [
+      '#type' => 'hidden',
+      '#title' => 'Longitude',
+      '#attributes' => array (
+        'id' => 'map_view_longitude',
+      ),
+    ];
+
+    $form['address'] = [
+      '#type' => 'hidden',
+      '#title' => 'Address',
+      '#attributes' => array (
+        'id' => 'map_view_address'
+      ),
+    ];
+
     $config = \Drupal::config('sh_map_view.custom_config');
     $map_settings = [
 
       'map_view_access_token' => $config->get('map_view_access_token'),
       'map_view_location' => $config->get('location'),
       'map_view_id' => $config->get('map_view_id'),
+      'map_view_email' => $config->get('map_view_email'),
 
     ];
 
     $form['#attached']['library'][] = 'sh_map_view/leaflet';
-    $form['#attached']['library'][] = 'sh_map_view/geosearch';
     $form['#attached']['library'][] = 'sh_map_view/map_view';
     $form['#attached']['drupalSettings']['sh_map_view'] ['map_view'] = $map_settings;
 
