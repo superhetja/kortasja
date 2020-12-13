@@ -11,6 +11,6 @@ sh_map_view.custom_config:
     Location:
       type: string
       label: 'Coordinates for default map view'
-    Email:
+    map_view_email:
       type: email
       label: 'Email adress for nominatim service'

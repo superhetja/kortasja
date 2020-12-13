@@ -22,7 +22,8 @@
         "drupal/geocoder": "^3.14",
         "drupal/geofield": "^1.16",
         "drupal/geofield_map": "^2.67",
-        "drupal/leaflet": "^2.1"
+        "drupal/leaflet": "^2.1",
+        "geocoder-php/nominatim-provider": "^5.2"
     },
     "conflict": {
         "drupal/drupal": "*"
